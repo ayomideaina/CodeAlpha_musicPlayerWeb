@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="player">
+            <!-- search cont. -->
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for an artist or song...">
+
+                <button id="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="now-playing">
+                <div class="album-art">
+                    <img id="cover" src="" alt="Album Cover">
+                </div>
+
+                <div class="song-info">
+                    <h2 id="title">Song Title</h2>
+                    <h3 id="artist">Artist</h3>
+                </div>
+
+                <div class="controls">
+                    <button id="prev"><i class="fa-solid fa-backward"></i></button>
+                    <button id="play"><i class="fa-solid fa-play"></i></button>
+                    <button id="next"><i class="fa-solid fa-forward"></i></button>
+                </div>
+
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress" value="0" min="0" max="100">
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="volume-container">
+                    <i class="fa-solid fa-volume-low"></i>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+                </div>
+
+                <div class="autoplay-container">
+                    <label for="autoplay">Autoplay</label>
+                    <input type="checkbox" id="autoplay" checked>
+                </div>
+            </div>
+
+            <!-- song playlists -->
+            <div class="playlist">
+                <h3>Playlist</h3>
+                <ul id="playlist"></ul>
+            </div>
+        </section>
+        
+        <audio id="audio"></audio>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
